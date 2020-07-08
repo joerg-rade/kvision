@@ -73,11 +73,13 @@ class MapsSpec : DomSpec {
         }
     }
 
-/*    @Test
-    fun renderImage() {
+    // see https://github.com/jupyter-widgets/ipyleaflet/issues/234
+    // for accessing a local url via ./
+    @Test
+    fun renderUrl() {
         run {
             //GIVEN
-            val imageUrl = "https://www.w3.org/Icons/SVG/svg-logo-h.svg"
+            val imageUrl = "./SVG_Logo.svg"
 
             val bounds = LatLngBounds(
                     LatLng(0, 0),
@@ -101,13 +103,13 @@ class MapsSpec : DomSpec {
             root.add(map)
 
             // then
-            val expected = "<title>SVG logo combined with the W3C logo, set horizontally</title>"
+            val expected = "SVG_Logo.svg"
             val element = document.getElementById("test")!!
             console.log(element.innerHTML)
             assertTrue(
                     element.innerHTML.contains(expected),
                     "Must contain expected string")
         }
-    }*/
+    }
 
 }
